@@ -23,7 +23,7 @@
 
                     <div class="card">
                         <div class="card-body p-0">
-                            <form action="{{ route('students.destroy', $student->id) }}" method="POST">
+                            <form action="{{ route('student.destroy', $student->id) }}" method="POST">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Delete Student</button>

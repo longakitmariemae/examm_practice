@@ -5,7 +5,7 @@
         <div class="container-fluid">
             <div class="row mb-2">
                 <div class="col-sm-6">
-                    <h1 class="m-0">{{ __('Edit Student Information') }}</h1>
+                    <h1 class="m-0">{{ __('Add New Student') }}</h1>
                 </div><!-- /.col -->
             </div><!-- /.row -->
         </div><!-- /.container-fluid -->
@@ -18,15 +18,34 @@
                 <div class="col-lg-12">
 
                     <div class="alert alert-info">
-                        This is the form for editing the students information
+                        This is the form for adding new students information
                     </div>
 
                     <div class="card">
                         <div class="card-body p-0">
-                            <form action="{{ route('students.destroy', $student->id) }}" method="POST">
+                            <form action="{{ route('student.store') }}" method="POST">
                                 @csrf
-                                @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Delete Student</button>
+                                <div class="form-group">
+                                    <label for="fname">First Name</label>
+                                    <input type="text" name="fname" id="fname" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="lname">Last Name</label>
+                                    <input type="text" name="lname" id="lname" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="mname">Middle Name</label>
+                                    <input type="text" name="mname" id="mname" class="form-control" required>
+                                </div>  
+                                <div class="form-group">
+                                    <label for="add">Address</label>
+                                    <input type="text" name="add" id="add" class="form-control" required>
+                                </div>
+                                <div class="form-group">
+                                    <label for="dobirth">Date of Birth</label>
+                                    <input type="date" name="dobirth" id="dobirth" class="form-control" required>
+                                </div>
+                                <button type="submit" class="btn btn-primary">Add Student</button>
                             </form>
                         </div>
                         <!-- /.card-body -->

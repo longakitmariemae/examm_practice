@@ -32,7 +32,9 @@
                                     </tr>
                                 </thead>
                                 <tbody>
-                                    @foreach($students as $student)
+                                    @foreach ($students as $student)
+                                        
+                                    
                                     <tr>
                                         <td>{{ $student->id }}</td>
                                         <td>{{ $student->fname }}</td>
@@ -41,8 +43,8 @@
                                         <td>{{ $student->add }}</td>
                                         <td>{{ $student->dobirth }}</td>
                                         <td>
-                                            <a href="{{ route('students.edit', $student->id) }}" class="btn btn-primary btn-sm">Edit</a>
-                                            <form action="{{ route('students.destroy', $student->id) }}" method="POST" style="display:inline-block;">
+                                            <a href="{{ route('student.edit', $student->id) }}" class="btn btn-primary btn-sm">Edit</a>
+                                            <form action="{{ route('student.destroy', $student->id) }}" method="POST" style="display:inline-block;">
                                                 @csrf
                                                 @method('DELETE')
                                                 <button type="submit" class="btn btn-danger btn-sm">Delete</button>
